@@ -13,5 +13,5 @@ import {HeaderComponent} from "../../shared/components/header/header.component";
   styleUrl: './aboutus.component.scss'
 })
 export class AboutusComponent {
-
+  title = "About Us"
 }
