@@ -1,9 +1,17 @@
+@font-face {
+  font-family: 'font_header';
+  src: url('./fonts/Aston Script.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .header_base {
   background-image: url("./img/header_background_img.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   padding: 0.2em;
+  font-family: font_header, serif;
 }
 
 .header_base h1 {
