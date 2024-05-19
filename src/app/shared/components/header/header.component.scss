@@ -10,13 +10,18 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding: 0.2em;
   font-family: font_header, serif;
+  text-align: center;
+  border-bottom: 20px solid beige;
 }
 
 .header_base h1 {
-  text-align: center;
   color: brown;
   text-shadow: 1px 1px 2px beige;
-  font-size: 3em;
+  font-size: 1.5em;
+  background-color: beige;
+}
+
+.header_base h2 {
+  font-size: 2.5em;
 }
