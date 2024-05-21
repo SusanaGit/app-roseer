@@ -4,19 +4,19 @@
 
 <form>
   <div>
-    URL photo: <input type="text"><br>
-    Name: <input type="text"><br>
-    Variety: <input type="text"><br>
-    Flower colour: <input type="text"><br>
-    Flower scent: <input type="text"><br>
-    Intensity fragrance: <input type="range"><br>
-    Flower size: <input type="number"> cm<br>
-    Durability flowers: <input type="number"> days<br>
-    Height: <input type="number"> cm<br>
-    Frost resistance: <input type="number"> celsius<br>
-    Disease resistance: <input type="range"><br>
-    Water requirements: <input type="range"><br>
-    Sun exposure: <input type="range"><br>
-    <button type="button">Save</button>
+    URL photo: <input type="text" [(ngModel)]="photo" name="photo"><br>
+    Name: <input type="text" [(ngModel)]="name" name="name"><br>
+    Variety: <input type="text" [(ngModel)]="variety" name="variety"><br>
+    Flower colour: <input type="text" [(ngModel)]="flowerColour" name="flowerColour"><br>
+    Flower scent: <input type="text" [(ngModel)]="flowerScent" name="flowerScent"><br>
+    Intensity fragrance: <input type="range" [(ngModel)]="intensityFragrance" name="intensityFragrance"><br>
+    Flower size: <input type="number" [(ngModel)]="flowerSize" name="flowerSize"> cm<br>
+    Durability flowers: <input type="number" [(ngModel)]="durabilityFlowers" name="durabilityFlowers"> days<br>
+    Height: <input type="number" [(ngModel)]="heightCm" name="heightCm"> cm<br>
+    Frost resistance: <input type="number" [(ngModel)]="frostResistanceCelsius" name="frostResistanceCelsius"> celsius<br>
+    Disease resistance: <input type="range" [(ngModel)]="diseaseResistance" name="diseaseResistance"><br>
+    Water requirements: <input type="range" [(ngModel)]="waterRequirements" name="waterRequirements"><br>
+    Sun exposure: <input type="range" [(ngModel)]="sunExposure" name="sunExposure"><br>
+    <button type="button" (click)="saveRose()">Save</button>
   </div>
 </form>
