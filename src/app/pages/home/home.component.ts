@@ -13,10 +13,11 @@ import {HeaderComponent} from "../../shared/components/header/header.component";
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
-  title = "Home"
+  title: string | undefined ;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.title = "Home";
   }
 }
