@@ -1,5 +1,6 @@
 export interface IRose {
-  id: number;
+  id?: number;
+  photo: string;
   name: string;
   variety: string;
   flowerColour: string;
