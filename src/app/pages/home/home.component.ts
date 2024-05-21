@@ -5,6 +5,7 @@ import {IRose} from "../../model/interfaces";
 import {RosesService} from "../../services/roses.service";
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {NgFor, NgOptimizedImage} from "@angular/common";
+import {RoseFormComponent} from "../../shared/components/rose-form/rose-form.component";
 
 @Component({
   selector: 'app-home',
@@ -12,10 +13,9 @@ import {NgFor, NgOptimizedImage} from "@angular/common";
   imports: [
     RouterModule,
     HeaderComponent,
-    FormsModule,
     NgFor,
-    ReactiveFormsModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    RoseFormComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -28,8 +28,6 @@ export class HomeComponent implements OnInit {
 
   title: string | undefined ;
 
-  roseForm!: FormGroup;
-
   constructor() { }
 
   ngOnInit(): void {
@@ -38,70 +36,26 @@ export class HomeComponent implements OnInit {
     console.log("Initialize the roses variable.");
     this.getRoses();
 
-    console.log("Create roseForm.");
-    this.createForm();
   }
 
   getRoses() {
     this.roses = this.rosesService.getRoses();
   }
 
-  createForm() {
-    this.roseForm = new FormGroup({
-      photo: new FormControl("", [Validators.required]),
-      name: new FormControl(""),
-      variety: new FormControl("", [Validators.required]),
-      flowerColour: new FormControl("", [Validators.required]),
-      flowerScent: new FormControl(""),
-      intensityFragrance: new FormControl(0, [Validators.required]),
-      flowerSize: new FormControl(0),
-      durabilityFlowers: new FormControl(0),
-      heightCm: new FormControl(0),
-      frostResistanceCelsius: new FormControl(0),
-      diseaseResistance: new FormControl(0),
-      waterRequirements: new FormControl(0),
-      sunExposure: new FormControl(0)
-    })
-  }
+  saveRose(rose: IRose) {
 
-  saveRose() {
+    console.log("Saving rose: ", rose)
 
-    console.log(this.roseForm);
-
-    if (this.roseForm.valid) {
-      const rose: IRose = {
-        photo: this.roseForm.get("photo")?.value,
-        name: this.roseForm.get("name")?.value,
-        variety: this.roseForm.get("variety")?.value,
-        flowerColour: this.roseForm.get("flowerColour")?.value,
-        flowerScent: this.roseForm.get("flowerScent")?.value,
-        intensityFragrance: this.roseForm.get("intensityFragrance")?.value,
-        flowerSize: this.roseForm.get("flowerSize")?.value,
-        durabilityFlowers: this.roseForm.get("durabilityFlowers")?.value,
-        heightCm: this.roseForm.get("heightCm")?.value,
-        frostResistanceCelsius: this.roseForm.get("frostResistanceCelsius")?.value,
-        diseaseResistance: this.roseForm.get("diseaseResistance")?.value,
-        waterRequirements: this.roseForm.get("waterRequirements")?.value,
-        sunExposure: this.roseForm.get("sunExposure")?.value
-        }
-
-        console.log("Saving rose: ", rose)
-
-        try {
-          this.rosesService.setRose(rose);
-        } catch (error) {
-          console.error("Error saving rose: ", error)
-        }
-
-        try {
-          this.getRoses();
-        } catch (error) {
-          console.error("Error showing list of roses.")
-        }
-
-      } else {
-      console.error("INVALID!!!")
+    try {
+      this.rosesService.setRose(rose);
+    } catch (error) {
+      console.error("Error saving rose: ", error)
     }
 
+    try {
+      this.getRoses();
+    } catch (error) {
+      console.error("Error showing list of roses.")
+    }
   }
 }
