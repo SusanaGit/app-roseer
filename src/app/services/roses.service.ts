@@ -24,4 +24,13 @@ export class RosesService {
     }
   }
 
+  setRose(rose: IRose) {
+    const roses = this.getRoses();
+
+    console.log("Adding new rose: ", rose);
+
+    roses.push(rose);
+    window.localStorage.setItem("roses", JSON.stringify(roses))
+  }
+
 }
