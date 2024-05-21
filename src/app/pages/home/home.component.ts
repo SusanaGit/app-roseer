@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {RouterModule} from "@angular/router";
 import {HeaderComponent} from "../../shared/components/header/header.component";
 
@@ -12,6 +12,11 @@ import {HeaderComponent} from "../../shared/components/header/header.component";
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   title = "Home"
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 }
