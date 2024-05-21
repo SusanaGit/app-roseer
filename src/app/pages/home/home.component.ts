@@ -4,6 +4,7 @@ import {HeaderComponent} from "../../shared/components/header/header.component";
 import {IRose} from "../../model/interfaces";
 import {RosesService} from "../../services/roses.service";
 import {FormsModule} from "@angular/forms";
+import {NgFor} from "@angular/common";
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,8 @@ import {FormsModule} from "@angular/forms";
   imports: [
     RouterModule,
     HeaderComponent,
-    FormsModule
+    FormsModule,
+    NgFor
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -19,6 +21,8 @@ import {FormsModule} from "@angular/forms";
 export class HomeComponent implements OnInit {
 
   rosesService = inject(RosesService);
+
+  roses: IRose[] = [];
 
   title: string | undefined ;
 
@@ -40,6 +44,13 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.title = "Home";
+
+    console.log("Initialize the roses variable.");
+    this.getRoses();
+  }
+
+  getRoses() {
+    this.roses = this.rosesService.getRoses();
   }
 
   saveRose() {
@@ -66,6 +77,12 @@ export class HomeComponent implements OnInit {
       this.rosesService.setRose(rose);
     } catch (error) {
       console.error("Error saving rose: ", error)
+    }
+
+    try {
+      this.getRoses();
+    } catch (error) {
+      console.error("Error showing list of roses.")
     }
   }
 }

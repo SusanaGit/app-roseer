@@ -2,6 +2,16 @@
 
 <a [routerLink]="'/aboutus'">About Us</a>
 
+<h2>List of Roses</h2>
+
+<div>
+  <ul>
+    <li *ngFor="let rose of roses">{{rose.name}}</li>
+  </ul>
+</div>
+
+<h2>New Rose</h2>
+
 <form>
   <div>
     URL photo: <input type="text" [(ngModel)]="photo" name="photo"><br>
