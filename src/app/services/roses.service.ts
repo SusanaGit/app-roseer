@@ -7,7 +7,7 @@ import {IRose} from "../model/interfaces";
 export class RosesService {
 
   constructor() {
-    console.log("RosesService initialized")
+    console.log("RosesService initialized.")
   }
 
   getRoses(): IRose[] {
