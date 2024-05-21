@@ -4,9 +4,20 @@
 
 <h2>List of Roses</h2>
 
-<div>
+<div class="list_roses">
   <ul>
-    <li *ngFor="let rose of roses">{{rose.name}}</li>
+    <li *ngFor="let rose of roses">
+      <table>
+        <td class="list_roses_img">
+          <img [src]="rose.photo" width="200" height="200" alt="rose"/><br>
+        </td>
+        <td class="list_roses_information">
+          Name: {{rose.name}}<br>
+          Variety: {{rose.variety}}<br>
+          Intensity Fragrance: {{rose.intensityFragrance}}<br>
+        </td>
+      </table>
+    </li>
   </ul>
 </div>
 

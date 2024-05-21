@@ -4,7 +4,7 @@ import {HeaderComponent} from "../../shared/components/header/header.component";
 import {IRose} from "../../model/interfaces";
 import {RosesService} from "../../services/roses.service";
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
-import {NgFor} from "@angular/common";
+import {NgFor, NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-home',
@@ -14,7 +14,8 @@ import {NgFor} from "@angular/common";
     HeaderComponent,
     FormsModule,
     NgFor,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgOptimizedImage
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
