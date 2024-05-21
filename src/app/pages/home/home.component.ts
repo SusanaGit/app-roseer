@@ -23,10 +23,9 @@ import {RoseFormComponent} from "../../shared/components/rose-form/rose-form.com
 export class HomeComponent implements OnInit {
 
   rosesService = inject(RosesService);
-
   roses: IRose[] = [];
-
   title: string | undefined ;
+  buttonName="Save";
 
   constructor() { }
 
@@ -35,7 +34,6 @@ export class HomeComponent implements OnInit {
 
     console.log("Initialize the roses variable.");
     this.getRoses();
-
   }
 
   getRoses() {

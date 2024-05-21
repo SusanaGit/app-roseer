@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {IRose} from "../../../model/interfaces";
 
@@ -13,6 +13,8 @@ import {IRose} from "../../../model/interfaces";
   styleUrl: './rose-form.component.scss'
 })
 export class RoseFormComponent {
+
+  @Input() buttonName!: string;
 
   roseForm!: FormGroup;
 
@@ -39,7 +41,7 @@ export class RoseFormComponent {
     })
   }
 
-  saveRose() {
+  outputRose() {
 
     console.log(this.roseForm);
     if (this.roseForm.valid) {
