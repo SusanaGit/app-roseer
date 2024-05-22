@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   rosesService = inject(RosesService);
   roses: IRose[] = [];
   title: string | undefined ;
-  buttonName="Save New Rose";
+
 
   constructor(private router: Router) {
   }
@@ -38,23 +38,6 @@ export class HomeComponent implements OnInit {
 
   getRoses() {
     this.roses = this.rosesService.getRoses();
-  }
-
-  saveRose(rose: IRose) {
-
-    console.log("Saving rose: ", rose)
-
-    try {
-      this.rosesService.setRose(rose);
-    } catch (error) {
-      console.error("Error saving rose: ", error)
-    }
-
-    try {
-      this.getRoses();
-    } catch (error) {
-      console.error("Error showing list of roses.")
-    }
   }
 
   goToEdit(index: number) {
