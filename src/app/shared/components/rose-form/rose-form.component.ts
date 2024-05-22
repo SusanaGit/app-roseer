@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {IRose} from "../../../model/interfaces";
+import {MatButtonModule} from "@angular/material/button";
 
 @Component({
   selector: 'app-rose-form',
@@ -8,6 +9,7 @@ import {IRose} from "../../../model/interfaces";
   imports: [
     FormsModule,
     ReactiveFormsModule,
+    MatButtonModule,
   ],
   templateUrl: './rose-form.component.html',
   styleUrl: './rose-form.component.scss'
