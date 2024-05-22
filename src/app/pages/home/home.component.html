@@ -6,7 +6,7 @@
 
 <div class="list_roses">
   <ul>
-    <li *ngFor="let rose of roses" (click)="goToEdit(rose)">
+    <li *ngFor="let rose of roses; index as i" (click)="goToEdit(i)">
       <table>
         <td class="list_roses_img">
           <img [src]="rose.photo" width="200" height="200" alt="rose"/><br>

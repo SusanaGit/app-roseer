@@ -33,4 +33,10 @@ export class RosesService {
     window.localStorage.setItem("roses", JSON.stringify(roses))
   }
 
+  getRoseByIndex(index: Number) {
+    const roses = this.getRoses();
+    // @ts-ignore
+    return roses(index);
+  }
+
 }
