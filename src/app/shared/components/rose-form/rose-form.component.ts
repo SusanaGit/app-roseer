@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {IRose} from "../../../model/interfaces";
 
@@ -15,6 +15,8 @@ import {IRose} from "../../../model/interfaces";
 export class RoseFormComponent {
 
   @Input() buttonName!: string;
+
+  @Output() outRose= new EventEmitter<IRose>();
 
   roseForm!: FormGroup;
 
@@ -60,6 +62,7 @@ export class RoseFormComponent {
         waterRequirements: this.roseForm.get("waterRequirements")?.value,
         sunExposure: this.roseForm.get("sunExposure")?.value
       }
+      this.outRose.emit(rose);
     } else {
       console.error("INVALID!!!")
     }

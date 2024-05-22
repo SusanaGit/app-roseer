@@ -3,7 +3,6 @@ import {RouterModule} from "@angular/router";
 import {HeaderComponent} from "../../shared/components/header/header.component";
 import {IRose} from "../../model/interfaces";
 import {RosesService} from "../../services/roses.service";
-import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {NgFor, NgOptimizedImage} from "@angular/common";
 import {RoseFormComponent} from "../../shared/components/rose-form/rose-form.component";
 
