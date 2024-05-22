@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   rosesService = inject(RosesService);
   roses: IRose[] = [];
   title: string | undefined ;
-  buttonName="Save";
+  buttonName="Save New Rose";
 
   constructor(private router: Router) {
   }
