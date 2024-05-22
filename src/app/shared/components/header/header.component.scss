@@ -25,3 +25,50 @@
 .header_base h2 {
   font-size: 2.5em;
 }
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  background-color: #6a883c;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav ul li {
+  float: left;
+}
+
+nav ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: #7fa158;
+}
+
+nav ul li ul {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li:hover > ul {
+  display: block;
+}
+
+nav ul li ul li {
+  float: none;
+}

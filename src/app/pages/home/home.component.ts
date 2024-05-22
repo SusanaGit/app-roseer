@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.title = "Home";
+    this.title = "List of Roses";
 
     console.log("Initialize the roses variable.");
     this.getRoses();

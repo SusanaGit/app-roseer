@@ -4,13 +4,15 @@ import {RosesService} from "../../services/roses.service";
 import {IRose} from "../../model/interfaces";
 import {NgForOf} from "@angular/common";
 import {RoseFormComponent} from "../../shared/components/rose-form/rose-form.component";
+import {HeaderComponent} from "../../shared/components/header/header.component";
 
 @Component({
   selector: 'app-edit',
   standalone: true,
   imports: [
     NgForOf,
-    RoseFormComponent
+    RoseFormComponent,
+    HeaderComponent
   ],
   templateUrl: './edit.component.html',
   styleUrl: './edit.component.scss'
@@ -21,12 +23,14 @@ export class EditComponent implements OnInit {
   rose!: IRose | undefined;
   buttonName = "Save Changes";
   index!: number;
+  title: string | undefined;
 
   constructor(private activatedRoute: ActivatedRoute, private route: Router){
   }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
+      this.title = "Edit Rose";
       this.index = params['id'];
       console.log("Id selected rose: ", this.index);
       this.rose = this.rosesService.getRoseByIndex(this.index);

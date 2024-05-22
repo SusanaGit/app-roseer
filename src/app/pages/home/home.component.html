@@ -1,17 +1,11 @@
 <app-header [title]="title"></app-header>
 
-<a [routerLink]="'/aboutus'">About Us</a>
-
-<h2>List of Roses</h2>
-
 <div class="list_roses">
   <ul>
     <li *ngFor="let rose of roses; index as i" (click)="goToEdit(i)">
       <table>
         <td class="list_roses_img">
           <img [src]="rose.photo" width="200" height="200" alt="rose"/><br>
-        </td>
-        <td class="list_roses_information">
           Name: {{rose.name}}<br>
           Variety: {{rose.variety}}<br>
           Intensity Fragrance: {{rose.intensityFragrance}}<br>
