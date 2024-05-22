@@ -27,7 +27,7 @@ export class ModifyRoseComponent implements OnInit {
   ngOnInit(): void {
     this.title = "Modify Roses";
 
-    console.log("Initialize the roses variable.");
+    console.log("Initialize roses variable.");
     this.getRoses();
   }
 
@@ -36,7 +36,7 @@ export class ModifyRoseComponent implements OnInit {
   }
 
   goToEdit(index: number) {
-    console.log("Index selected rose: ", index);
+    console.log("Index selected rose to modify: ", index);
     this.router.navigate(['/edit', index]);
   }
 
