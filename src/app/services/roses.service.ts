@@ -35,6 +35,7 @@ export class RosesService {
 
   getRoseByIndex(index: Number) {
     const roses = this.getRoses();
+
     // @ts-ignore
     return roses(index);
   }

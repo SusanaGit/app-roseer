@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit {
   }
 
   goToEdit(index: number) {
-    console.log(index);
-    this.router.navigate(["/edit", index]);
+    console.log("Index selected rose: ", index);
+    this.router.navigate(['/edit', index]);
   }
 }
