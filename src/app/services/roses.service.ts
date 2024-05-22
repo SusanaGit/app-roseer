@@ -33,11 +33,15 @@ export class RosesService {
     window.localStorage.setItem("roses", JSON.stringify(roses))
   }
 
-  getRoseByIndex(index: Number) {
+  getRoseByIndex(index: number) {
     const roses = this.getRoses();
 
-    // @ts-ignore
-    return roses(index);
-  }
+    if (index >= 0 && index < roses.length) {
+      return roses[index];
+    } else {
+      console.error(`Index ${index} is out of bounds for roses array.`);
+      return undefined;
+    }
 
+  }
 }
