@@ -19,7 +19,7 @@ export class NewRoseComponent implements OnInit {
   title: string | undefined ;
   rosesService = inject(RosesService);
   roses: IRose[] = [];
-  buttonName="Save New Rose";
+  buttonName="Register New Rose";
 
   ngOnInit(): void {
     this.title = "Register New Rose";
@@ -31,7 +31,7 @@ export class NewRoseComponent implements OnInit {
 
   saveRose(rose: IRose) {
 
-    console.log("Saving rose: ", rose)
+    console.log("Register new rose: ", rose)
 
     try {
       this.rosesService.setRose(rose);
