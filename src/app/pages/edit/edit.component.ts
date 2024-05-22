@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {RosesService} from "../../services/roses.service";
 
 @Component({
   selector: 'app-edit',
@@ -9,6 +10,9 @@ import {ActivatedRoute} from "@angular/router";
   styleUrl: './edit.component.scss'
 })
 export class EditComponent implements OnInit {
+
+  rosesService = inject(RosesService);
+
   constructor(private activatedRoute: ActivatedRoute) {
   }
 
