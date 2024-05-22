@@ -55,4 +55,7 @@ export class HomeComponent implements OnInit {
       console.error("Error showing list of roses.")
     }
   }
+
+  goToEdit(rose: IRose) {
+  }
 }
