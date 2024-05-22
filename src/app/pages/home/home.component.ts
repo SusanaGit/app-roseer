@@ -1,5 +1,5 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {Router, RouterModule} from "@angular/router";
+import {RouterModule} from "@angular/router";
 import {HeaderComponent} from "../../shared/components/header/header.component";
 import {IRose} from "../../model/interfaces";
 import {RosesService} from "../../services/roses.service";
@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   title: string | undefined ;
 
 
-  constructor(private router: Router) {
+  constructor() {
   }
 
   ngOnInit(): void {
@@ -38,10 +38,5 @@ export class HomeComponent implements OnInit {
 
   getRoses() {
     this.roses = this.rosesService.getRoses();
-  }
-
-  goToEdit(index: number) {
-    console.log("Index selected rose: ", index);
-    this.router.navigate(['/edit', index]);
   }
 }
