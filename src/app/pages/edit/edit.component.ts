@@ -1,5 +1,5 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {RosesService} from "../../services/roses.service";
 import {IRose} from "../../model/interfaces";
 import {NgForOf} from "@angular/common";
@@ -20,14 +20,16 @@ export class EditComponent implements OnInit {
   rosesService = inject(RosesService);
   rose!: IRose | undefined;
   buttonName = "Save Changes";
+  index!: number;
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute, private route: Router){
   }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-      console.log("Id selected rose: ", params['id']);
-      this.rose = this.rosesService.getRoseByIndex(params['id']);
+      this.index = params['id'];
+      console.log("Id selected rose: ", this.index);
+      this.rose = this.rosesService.getRoseByIndex(this.index);
       console.log("Selected rose: ", this.rose);
     })
   }
@@ -37,10 +39,10 @@ export class EditComponent implements OnInit {
     console.log("Saving changes to rose: ", rose)
 
     try {
-      this.rosesService.setRose(rose);
+      this.rosesService.saveChangesRose(this.index, rose);
+      this.route.navigate(['/home']);
     } catch (error) {
       console.error("Error saving rose: ", error)
     }
   }
-
 }

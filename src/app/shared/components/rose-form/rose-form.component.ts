@@ -59,7 +59,7 @@ export class RoseFormComponent {
 
   fillForm(modified_rose: IRose) {
     this.roseForm.controls['photo'].setValue(modified_rose.photo);
-    this.roseForm.controls['name'].setValue(modified_rose.photo);
+    this.roseForm.controls['name'].setValue(modified_rose.name);
     this.roseForm.controls['variety'].setValue(modified_rose.variety);
     this.roseForm.controls['flowerColour'].setValue(modified_rose.flowerColour);
     this.roseForm.controls['flowerScent'].setValue(modified_rose.flowerScent);

@@ -30,7 +30,17 @@ export class RosesService {
     console.log("Adding new rose: ", rose);
 
     roses.push(rose);
-    window.localStorage.setItem("roses", JSON.stringify(roses))
+    this.saveRoses(roses);
+  }
+
+  saveChangesRose(index: number, modified_rose: IRose) {
+    const roses = this.getRoses();
+    roses[index] = modified_rose;
+    this.saveRoses(roses);
+  }
+
+  private saveRoses(roses: IRose[]) {
+    window.localStorage.setItem('roses', JSON.stringify(roses))
   }
 
   getRoseByIndex(index: number) {
@@ -42,6 +52,5 @@ export class RosesService {
       console.error(`Index ${index} is out of bounds for roses array.`);
       return undefined;
     }
-
   }
 }
