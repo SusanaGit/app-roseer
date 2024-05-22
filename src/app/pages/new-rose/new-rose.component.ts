@@ -3,6 +3,7 @@ import {HeaderComponent} from "../../shared/components/header/header.component";
 import {RoseFormComponent} from "../../shared/components/rose-form/rose-form.component";
 import {IRose} from "../../model/interfaces";
 import {RosesService} from "../../services/roses.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-new-rose',
@@ -21,6 +22,10 @@ export class NewRoseComponent implements OnInit {
   roses: IRose[] = [];
   buttonName="Register New Rose";
 
+  constructor(private route: Router) {
+  }
+
+
   ngOnInit(): void {
     this.title = "Register New Rose";
   }
@@ -35,6 +40,7 @@ export class NewRoseComponent implements OnInit {
 
     try {
       this.rosesService.setRose(rose);
+      this.route.navigate(['/home']);
     } catch (error) {
       console.error("Error saving rose: ", error)
     }
