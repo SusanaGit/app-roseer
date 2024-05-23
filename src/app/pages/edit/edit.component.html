@@ -1,3 +1,8 @@
 <app-header [title]="title"></app-header>
 
-<app-rose-form [buttonName]="buttonName" (outRose)="saveChangesRose($event)" [rose]="rose"></app-rose-form>
+<h2>Modify this Rose</h2>
+
+<div class = "form-edit">
+  <app-rose-form [buttonName]="buttonName" (outRose)="saveChangesRose($event)" [rose]="rose"></app-rose-form>
+</div>
+

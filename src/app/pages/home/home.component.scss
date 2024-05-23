@@ -6,15 +6,9 @@
     list-style-type: none;
 
     li {
-      cursor: pointer;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
       margin: 5px;
       background-color: #fff;
-
-      &:hover {
-        transform: scale(1.05);
-      }
 
       table {
         border-spacing: 0;

@@ -1,15 +1,15 @@
 <form [formGroup]="roseForm">
-  <div>
+  <div class = "container">
     URL photo: <input type="text" formControlName="photo"><br>
     Name: <input type="text" formControlName="name"><br>
     Variety: <input type="text" formControlName="variety"><br>
     Flower colour: <input type="text" formControlName="flowerColour"><br>
     Flower scent: <input type="text" formControlName="flowerScent"><br>
     Intensity fragrance: <input type="range" formControlName="intensityFragrance"><br>
-    Flower size: <input type="number" formControlName="flowerSize"> cm<br>
-    Durability flowers: <input type="number" formControlName="durabilityFlowers"> days<br>
-    Height: <input type="number" formControlName="heightCm"> cm<br>
-    Frost resistance: <input type="number" formControlName="frostResistanceCelsius"> celsius<br>
+    Flower size (cm): <input type="number" formControlName="flowerSize"><br>
+    Durability flowers (days): <input type="number" formControlName="durabilityFlowers"><br>
+    Height (cm): <input type="number" formControlName="heightCm"><br>
+    Frost resistance (celsius): <input type="number" formControlName="frostResistanceCelsius"><br>
     Disease resistance: <input type="range" formControlName="diseaseResistance"><br>
     Water requirements: <input type="range" formControlName="waterRequirements"><br>
     Sun exposure: <input type="range" formControlName="sunExposure"><br>
