@@ -33,6 +33,13 @@ export class RosesService {
     this.saveRoses(roses);
   }
 
+  deleteRose(index: number, rose_delete: IRose) {
+    const roses = this.getRoses();
+    console.log("Deleting rose: ", rose_delete);
+    roses.splice(index,1);
+    this.saveRoses(roses);
+  }
+
   saveChangesRose(index: number, modified_rose: IRose) {
     const roses = this.getRoses();
     roses[index] = modified_rose;

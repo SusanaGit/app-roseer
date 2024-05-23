@@ -1,1 +1,3 @@
-<p>delete works!</p>
+<app-header [title]="title"></app-header>
+
+<app-rose-form [buttonName]="buttonName" (outRose)="deleteRose($event)" [rose]="rose"></app-rose-form>
