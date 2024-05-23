@@ -36,7 +36,7 @@ export class DeleteRosesComponent implements OnInit {
     this.roses = this.rosesService.getRoses();
   }
 
-  goToEdit(index: number) {
+  goToDelete(index: number) {
     console.log("Index selected rose to delete: ", index);
     this.router.navigate(['/delete', index]);
   }

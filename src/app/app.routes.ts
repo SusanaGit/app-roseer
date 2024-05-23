@@ -5,6 +5,7 @@ import {EditComponent} from "./pages/edit/edit.component";
 import {NewRoseComponent} from "./pages/new-rose/new-rose.component";
 import {ModifyRoseComponent} from "./pages/modify-rose/modify-rose.component";
 import {DeleteRosesComponent} from "./pages/delete-roses/delete-roses.component";
+import {DeleteComponent} from "./pages/delete/delete.component";
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -14,5 +15,6 @@ export const routes: Routes = [
   { path: 'new-rose', component: NewRoseComponent},
   { path: 'modify-rose', component: ModifyRoseComponent },
   { path: 'delete-roses', component:  DeleteRosesComponent},
+  { path: 'delete/:id', component: DeleteComponent },
   { path: '**/*', redirectTo: 'home'}
 ];

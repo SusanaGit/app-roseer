@@ -30,7 +30,7 @@ export class EditComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-      this.title = "Edit Rose";
+      this.title = "Modify Rose";
       this.index = params['id'];
       console.log("Id selected rose: ", this.index);
       this.rose = this.rosesService.getRoseByIndex(this.index);
