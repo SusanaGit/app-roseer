@@ -1,5 +1,7 @@
 <app-header [title]="title"></app-header>
 
+<h3>Select the Rose you want to modify</h3>
+
 <div class="list_roses">
   <ul>
     <li *ngFor="let rose of roses; index as i" (click)="goToEdit(i)">
