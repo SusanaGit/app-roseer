@@ -1,3 +1,7 @@
+![image](https://github.com/user-attachments/assets/61bd7913-993d-4205-a8b1-6a1bce347b6b)
+
+https://susanagit.github.io/app-roseer/home
+
 # AppRoseer
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
